@@ -7,7 +7,7 @@ import com.vaadin.demo.service.PatientService;
 import com.vaadin.demo.ui.mobile.MobileJournalRow;
 import com.vaadin.server.ExternalResource;
 import com.vaadin.server.FontAwesome;
-import com.vaadin.shared.ui.label.ContentMode;
+import com.vaadin.shared.ui.ContentMode;
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.spring.annotation.UIScope;
 import com.vaadin.ui.*;

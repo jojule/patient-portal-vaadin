@@ -1,6 +1,6 @@
 package com.vaadin.demo.ui;
 
-import com.vaadin.data.BeanBinder;
+import com.vaadin.data.Binder;
 import com.vaadin.data.BinderValidationStatus;
 import com.vaadin.demo.entities.Gender;
 import com.vaadin.demo.entities.Patient;
@@ -43,7 +43,7 @@ public class PatientForm extends SubView {
 
     private Button save, cancel, delete, secondaryCancel;
 
-    BeanBinder<Patient> bb = new BeanBinder<>(Patient.class);
+    Binder<Patient> bb = new Binder<>(Patient.class);
 
     boolean validating = false;
 

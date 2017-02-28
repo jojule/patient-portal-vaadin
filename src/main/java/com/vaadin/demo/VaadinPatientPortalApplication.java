@@ -32,18 +32,15 @@ public class VaadinPatientPortalApplication {
 
         @Override
         protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-            // @formatter:off
             auth
                     .inMemoryAuthentication()
                     .withUser("admin").password("password").roles("admin")
                     .and()
                     .withUser("user").password("password").roles("user");
-            // @formatter:on
         }
 
         @Override
         protected void configure(HttpSecurity http) throws Exception {
-            // @formatter:off
             http
                     .csrf().disable() // Use Vaadin's CSRF protection
                     .authorizeRequests().anyRequest().authenticated() // User must be authenticated to access any part of the application
@@ -53,7 +50,6 @@ public class VaadinPatientPortalApplication {
                     .logout().logoutUrl("/logout").logoutSuccessUrl("/login?logged-out").permitAll() // Logout success page is accessible to anybody
                     .and()
                     .sessionManagement().sessionFixation().newSession(); // Create completely new session
-            // @formatter:on
         }
 
         @Override
