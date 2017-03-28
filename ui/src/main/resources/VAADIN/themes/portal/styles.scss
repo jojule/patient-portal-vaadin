@@ -1,0 +1,362 @@
+@import "../valo/valo.scss";
+
+$v-background-color: #fff;
+
+$v-font-family: 'Ubuntu', sans-serif;
+$v-font-weight: 400;
+$v-font-color: #434D54;
+
+$font-green: #9DD22D;
+$danger-pink: #FF5DBA;
+
+$v-included-components:
+  verticallayout,
+  label,
+  nativebutton,
+  textfield,
+  passwordfield,
+  button,
+  csslayout,
+  grid,
+  formlayout,
+  tabsheet,
+  popupdatefield,
+  combobox,
+  datefield;
+
+.portal {
+  @include valo;
+
+  .login-view {
+    .login-box {
+      width: 400px;
+      position: relative;
+    }
+
+    .login-box .h1 {
+      color: #9DD22D;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+
+    .login-box .v-button {
+      width: 40%;
+    }
+  }
+
+  .main-nav {
+    background: #B5B9BC;
+    height: 60px;
+
+    .link {
+      font-size: 16px;
+      line-height: 60px;
+      text-transform: uppercase;
+      width: 200px;
+      text-align: center;
+      color: #fff;
+      height: 100%;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      padding: 2px 6px 3px 6px;
+      border-radius: 0;
+      font-weight: normal;
+
+      &:hover {
+        color: #ddd;
+        background: #747C81;
+      }
+
+      &.active {
+        background: #fff;
+        color: #9DD22D;
+      }
+    }
+  }
+
+  .patient-details-view {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    left: 25%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #fff;
+    border-left: 5px solid #434D54;
+    box-shadow: 2px 2px 10px 8px rgba(0, 0, 0, 0.2);
+    height: 100vh;
+    padding: 16px;
+
+    &.open {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .h1 {
+      color: #9DD22D;
+      text-transform: uppercase;
+      display: inline-block;
+      margin: 1rem auto;
+      border-bottom: 2px solid #9DD22D;
+      padding-bottom: 0.25rem;
+      font-size: 1.2rem;
+    }
+
+    .content {
+      flex: 1;
+    }
+
+    .sub-nav-bar {
+
+      margin-bottom: $v-unit-size;
+
+      .v-nativebutton {
+        border: none;
+        color: #B5B9BC;
+        text-transform: uppercase;
+        background: transparent;
+        cursor: pointer;
+        border-radius: 0;
+
+        &.active {
+          color: #9DD22D;
+          border-bottom: 2px solid #9DD22D;
+        }
+      }
+
+    }
+
+    .profile-view {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+
+      .name-layout {
+        order: 1;
+        width: 100%;
+        margin-bottom: 30px;
+
+        .v-label {
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 40px;
+        }
+
+        .first-name {
+          text-decoration: underline;
+        }
+      }
+
+      .details-layout {
+        order: 2;
+        width: 60%;
+
+        table {
+          width: 100%;
+
+          .v-formlayout-captioncell {
+            text-transform: uppercase;
+            color: #B5B9BC;
+            text-align: right;
+          }
+        }
+
+        & tr:nth-child(odd) {
+          background: #FAFAFA;
+        }
+      }
+
+      .profile-picture {
+        order: 3;
+        width: 35%;
+        line-height: 200px;
+        text-align: center;
+        background: #FAFAFA;
+      }
+    }
+  }
+
+  .v-grid {
+    border: 0;
+  }
+
+  .v-grid tr:hover {
+    background-color: #FAFAFA;
+    cursor: pointer;
+  }
+
+  .v-grid v-grid-row-focused {
+    background: #454D53 none;
+    color: #fff;
+    border: none;
+  }
+
+  .v-grid .v-grid-row-selected > .v-grid-cell {
+    background: #454D53 none;
+    color: #fff;
+    border: none;
+  }
+
+  .v-grid-header .v-grid-cell {
+    text-transform: uppercase;
+    border-color: transparent;
+    background: $font-green none;
+    color: #FFFFFF;
+
+  }
+
+  .v-grid-header a {
+    color: #FFFFFF;
+    font-weight: bold;
+  }
+
+  .v-grid td {
+    border-color: transparent;
+  }
+
+  button,
+  .v-button,
+  a.button {
+    background: transparent;
+    border: none;
+    text-transform: uppercase;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    color: #434D54;
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+  }
+
+  button.primary:focus,
+  button.primary:hover,
+  button.primary:active,
+  a.button.primary:focus,
+  a.button.primary:hover,
+  a.button.primary:active {
+    background: #727A7F;
+    color: #fff;
+    outline: none;
+  }
+
+  button:focus,
+  button:hover,
+  button:active,
+  a.button:focus,
+  a.button:hover,
+  a.button:active {
+    cursor: pointer;
+    color: #727A7F;
+  }
+
+  button.primary,
+  a.button.primary {
+    background: #454D53;
+    color: #fff;
+  }
+
+  button.danger,
+  a.button.danger {
+    color: #FF5DBA;
+  }
+
+  button.danger:focus,
+  button.danger:hover,
+  button.danger:active,
+  a.button.danger:focus,
+  a.button.danger:hover,
+  a.button.danger:active {
+    background: #FF5DBA;
+    color: #fff;
+  }
+
+  button[disabled],
+  a.button[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .v-captiontext,
+  .v-formlayout-captioncell {
+    text-transform: uppercase;
+    color: #B3B3B3;
+  }
+}
+
+@media (max-width: 600px) {
+  .portal {
+    .main-nav {
+      height: 50px;
+
+      .link {
+        line-height: 50px;
+        width: 120px;
+      }
+    }
+    .patient-details-view {
+      left: 0;
+      box-shadow: none;
+      border: none;
+
+      .sub-nav-bar {
+
+        .v-nativebutton {
+          padding-right: 0;
+          padding-left: 0;
+        }
+
+        .back-button {
+          .v-nativebutton-caption {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .portal {
+    .v-margin-top {
+      padding-top: 16px;
+    }
+
+    .v-margin-right {
+      padding-right: 16px;
+    }
+
+    .v-margin-bottom {
+      padding-bottom: 16px;
+    }
+
+    .v-margin-left {
+      padding-left: 16px;
+    }
+
+    .patient-details-view {
+      overflow-y: scroll;
+
+      .profile-view {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        .name-layout {
+          width: auto;
+        }
+
+        .details-layout {
+          width: 100%;
+        }
+
+        .profile-picture {
+          order: 0;
+          width: 60%;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}

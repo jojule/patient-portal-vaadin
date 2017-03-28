@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC
+        "-//Google Inc.//DTD Google Web Toolkit 1.7.0//EN"
+        "http://google-web-toolkit.googlecode.com/svn/tags/1.7.0/distro-source/core/src/gwt-module.dtd">
+
+<module>
+    <!-- Inherit the default widget set -->
+    <inherits name="com.vaadin.DefaultWidgetSet" />
+
+    
+
+    <generate-with class="com.vaadin.demo.ui.OptimizedConnectorBundleLoaderFactory">
+        <when-type-assignable class="com.vaadin.client.metadata.ConnectorBundleLoader" />
+    </generate-with>
+
+    <inherits name="com.vaadin.addon.charts.Widgetset" />
+</module>
