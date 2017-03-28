@@ -1,6 +1,6 @@
 package com.vaadin.demo.ui;
 
-import com.vaadin.data.Binder;
+import com.vaadin.data.BeanBinder;
 import com.vaadin.data.HasValue;
 import com.vaadin.demo.entities.*;
 import com.vaadin.demo.repositories.DoctorRepository;
@@ -44,7 +44,7 @@ public class JournalEntryForm extends SubView {
 
     private Button save, cancel, secondaryCancel;
 
-    Binder<JournalEntry> bb = new Binder<>(JournalEntry.class);
+    BeanBinder<JournalEntry> bb = new BeanBinder<>(JournalEntry.class);
 
     @PostConstruct
     public void init() {

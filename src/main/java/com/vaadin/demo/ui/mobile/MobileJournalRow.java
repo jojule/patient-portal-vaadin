@@ -1,13 +1,11 @@
 package com.vaadin.demo.ui.mobile;
 
 import com.vaadin.demo.entities.JournalEntry;
-import com.vaadin.shared.ui.ContentMode;
+import com.vaadin.shared.ui.label.ContentMode;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
 import java.text.SimpleDateFormat;
-
-import static com.vaadin.shared.ui.ContentMode.PREFORMATTED;
 
 /**
  * Created by mstahv
@@ -23,7 +21,7 @@ public class MobileJournalRow extends MobileRow {
         this.journal = journal;
         header.setMargin(false);
         title.setContentMode(ContentMode.PREFORMATTED);
-        desc.setContentMode(PREFORMATTED);
+        desc.setContentMode(ContentMode.PREFORMATTED);
 
         setSpacing(false);
 

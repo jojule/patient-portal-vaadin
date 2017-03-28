@@ -1,8 +1,8 @@
 package com.vaadin.demo.ui.mobile;
 
 import com.vaadin.server.FontAwesome;
-import com.vaadin.shared.ui.ContentMode;
 import com.vaadin.shared.ui.MarginInfo;
+import com.vaadin.shared.ui.label.ContentMode;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.FormLayout;
